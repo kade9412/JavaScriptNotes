@@ -1,0 +1,81 @@
+1.2.1: Use attributes and methods to communicate with users,including the type attribute
+
+1.2.2: Define variables, data types, and scope.
+
+1.2.3: List keywords and reserved words. 
+
+1.2.4: Store user input in variables and evaluate for appropriate responses using the console and built-in methods such as alert() and prompt().
+
+1.2.5: Distinguish between concatenation and addition 
+
+1.2.6: Apply operators, including string concatenation (+=), strict comparison ( ===, !==), matematical precedence and bitwise operaters.
+
+1.2.7: Demonstrate how to use expressions.
+
+1.2.8: Implement simple event handlers, including keyboard, mouse, and movile (gestures or touch) events.
+
+
+
+===========================================================================
+Objective 1.2.1: JavaScript attributes and methods
+Objective 1.2.8: Simple event handlers
+
+For any language, we need variables, data types, expressions, and operators.
+
+1+2 <<- expressions
+console.log(1+2); // 2 expressions but only 1 statement
+
+Methods of the window Object:
+    - alert() method
+    - prompt() method
+    - confirm() method
+Methods of the document Object:
+    - write() method
+
+===========================================================================
+11/28/23
+
+WORKING WITH DATA IN JavaScript
+
+        variables: a name space of memory
+
+        data type: a definition of the type of information that a variable holds 
+
+
+        JAVASCRIPT DATA types
+            [1] primitive
+            [2] Non-primitive
+
+            JAVASCRIPT PRIMITIVE TYPES 
+
+
+            [1.1] String: 
+            Any sequence of alphanumeric characters written in quotes ( either single or double)
+
+            [1.2] number:
+            Simple numeric value written with or without decimals
+
+            [1.2] Boolean:
+            Store one of two values: true or false
+
+            [1.4] null:
+            Defines a value that DOES NOT exist
+
+            [1.5] undefined:
+            The value of a variable that's created but has NO value
+
+            JAVASCRIPT NON-PRIMITIVE TYPES (2)
+            **Complex data types**
+            [2.1] array:
+            Special objects that can store more than one value at a time(a list of values)
+
+            [2.2] object:
+            Datastructures taht have their own methods and properties (values are stored as name:value pairs (kvp))
+
+
+        DECLARING VARIABLES 
+            var - can be changed; hoisting is bad; 
+            let - can be chanded; no hoisting;
+            const - cannot be changed;
+
+        NAMING VARABLES

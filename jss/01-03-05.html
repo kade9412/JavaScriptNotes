@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>01-03-05</title>
+    </head>
+    <body onload="alert(this);">
+            <h1 onclick="alert(this);">Click Me</h1>
+
+        <script>
+            // Test which object is referred to by the "this" keyword
+            var color = "tomato";
+            alert(this);// Window
+            alert(this.color);// Tomato
+
+            function whatIsThis() {
+                let color = "blue";
+                alert(this);// Window object
+                alert(this.color);// tomato
+            }
+
+            whatIsThis();
+        </script>
+
+    </body>
+</html>

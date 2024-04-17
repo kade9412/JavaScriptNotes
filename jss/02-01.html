@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang ="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>02-01</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            // //document.write("Bruh");
+            // //window.prompt("What is your name?")
+            // // dot notation is object.property or object.method()
+            // //dot is used to access those properties or methods
+
+
+
+            // //variables 
+            // let s1 = "hello world"
+            // let n1 = 100; 
+            // let n2 = 3.14159;
+            // let b1 = true;
+            // let null1 = null;
+            // let  und1 = undefined;
+            // console.log(`s1 = ${s1} type is ${typeof(s1)}`);
+            // console.log(`n1 = ${n1} type is ${typeof(n1)}`);
+            // console.log(`n2 = ${n2} type is ${typeof(n2)}`);
+            // console.log(`b1 = ${b1} type is ${typeof(b1)}`);
+            // console.log(`null1 = ${null1} type is ${typeof(null1)}`);
+            // console.log(`und1 = ${und1} type is ${typeof(und1)}`);
+            // //variables and non-primative types
+            // //
+            // let num = [1, 2, 3, 4, 5, 6];
+            // // example 0x100, 0x200, 0x350, 0x1000, 0x1100, 0x1300
+            // let sum = 0; 
+            // for (let index = 0; index <6; index++){
+            //     sum += num[index]
+            // }
+            // let avg = sum / num.length;
+            // console.log(`num = ${num}`);
+            // console.log(`sum of num is = ${sum}`)
+            // console.log(`avg of num ${avg}`)
+
+            // num = new Array(100,200,300,400,500)
+            // // differentt to create an array
+            // num.forEach((num)=>{
+            //     console.log(num);
+            // })
+            // console.table(num)
+            
+            
+            // let grid = [
+            //     [0,1,2],
+            //     [3,4,5],
+            //     [6,7,8],
+            // ];
+            // console.table(grid)
+
+
+            // //objects: Data structures that hav their own 
+            // //methods and properties
+            // //values are stored in a name:value pairs
+            // let student = {
+            //     fullName:{
+            //         firstName: "wesley",
+            //         middleName: null,
+            //         lastName: "Ni",
+            //     },
+            //     grade: 11, 
+            //     gpa: 5.0,
+            //     isCool: true,
+            //     grades: [100,98,98,88,100],
+
+            // };
+            // //console.table(student)
+            // console.table(student.fullName); 
+            
+            //declares a mutable variable
+            //lower camel-casing
+            //initialized the variable with string data
+            let greetingMessage = "Hello, World!";
+
+
+
+            //declares a mutable variable
+            //lower camel-casing
+            //initialized the variable with string data
+            //WARNING: this variable can be HOISTED :-(
+            var closingMessage = "Goodbye, World!";
+
+            // declares an immutable variable
+            //uses all CAPS by convention
+            //Iinitalized the vaarible with string data
+            const WARNING_MESSAGE = "Warning!";
+
+            console.log(greetingMessage);
+            console.log(closingMessage);
+            console.log(WARNING_MESSAGE);
+
+
+
+            let josh = {
+                fullName:{
+                    firstName: "josh",
+                    middleName: null,
+                    lastName: "mikey",
+                },
+                grade: 11,
+                gpa: 5.0,
+                isCool: true,
+                grades: [100,98,98,88,100],
+
+            };
+        let frank = {
+                        fullName:{
+                            firstName: "bob",
+                            middleName: 'b',
+                            lastName: "barry",
+                        },
+                        grade: 11,
+                        gpa: 2.0,
+                        isCool: false,
+                        grades: [34,22,22,84,69],
+
+                    };
+        let chris = {
+            fullName: {
+                firstName: "chris",
+                middleName: "jordan",
+                lastName: "hemsworth",
+            },
+            grade: 12,
+            gpa: 4.0,
+            isCool: true,
+            grades: [100, 100, 100, 100, 100],
+        };
+        let madara = {
+            fullName: {
+                firstName: "madara",
+                middleName: "O",
+                lastName: "uchiha",
+            },
+            grade: 11,
+            gpa: 4.5,
+            isCool: false,
+            grades: [93, 95, 91, 88, 97],
+        };
+        let obito = {
+            fullName: {
+                firstName: "obito",
+                middleName: "L",
+                lastName: "uchiha",
+            },
+            grade: 8,
+            gpa: 4.0,
+            isCool: true,
+            grades: [78, 85, 80, 92, 75],
+        };
+        let Zoro = {
+            fullName: {
+                firstName: "Roanoa",
+                middleName: "jane",
+                lastName: "Zoro",
+            },
+            grade: 10,
+            gpa: 3.9,
+            isCool: true,
+            grades: [85, 90, 92, 87, 88],
+        };
+        let Darth = {
+            fullName: {
+                firstName: "Darth",
+                middleName: "michael",
+                lastName: "Vader",
+            },
+            grade: 10,
+            gpa: 4.8,
+            isCool: false,
+            grades: [96, 98, 97, 92, 100],
+        };
+        let Luke = {
+            fullName: {
+                firstName: "Luke",
+                middleName: "rose",
+                lastName: "Skywalker",
+            },
+            grade: 10,
+            gpa: 4.2,
+            isCool: true,
+            grades: [89, 92, 95, 88, 94],
+        };
+        let George = {
+            fullName: {
+                firstName: "George",
+                middleName: "james",
+                lastName: "Bean",
+            },
+            grade: 8,
+            gpa: 3.5,
+            isCool: false,
+            grades: [75, 80, 78, 85, 72],
+        };
+        let Han = {
+            fullName: {
+                firstName: "Han",
+                middleName: "elizabeth",
+                lastName: "Solo",
+            },
+            grade: 10,
+            gpa: 4.3,
+            isCool: true,
+            grades: [91, 93, 89, 90, 94],
+        };
+        let Boba = {
+            fullName: {
+                firstName: "Boba",
+                middleName: "ryan",
+                lastName: "Fett",
+            },
+            grade: 12,
+            gpa: 4.6,
+            isCool: true,
+            grades: [95, 97, 94, 92, 98],
+        };
+                
+        people = [frank, chris, madara, obito, obito, Zoro, Darth, Luke, George, Han, Boba]
+        console.log(people)
+
+
+
+
+        </script>
+    </body>
+</html>

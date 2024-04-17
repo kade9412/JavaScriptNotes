@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>01-03-09</title>
+    </head>
+    <body>
+        <script>
+            // JS Functions
+
+            // Standard Named Function
+            /*
+            function sum(a,b) {
+                return a +b;
+            }
+            function greet() {
+                alert('hi!');
+            }
+
+            let msg = 'TESTING!!!!';
+            function testing() {
+                let msg= 'testing';
+                console.log(msg);
+                console.log(msg);
+                console.log(msg);
+                console.log(msg);
+                console.log(msg);
+            }
+            */
+            /*
+                1) Standard Functions 
+                2) Anonymous Function - a function with no name
+                3) Prototype Functions
+                4) Closure Functions
+                5) Arrow Functions
+            */
+
+
+            // This is a Function Expression that assigns 
+            // an Anonymous Function to a Function Object.
+            const sum = function(a,b){
+                return a + b;
+            }
+            const double = function(num){
+                return num * 2;
+            }
+
+            const nums = [1, 2, 3];
+            nums.forEach(function (num){
+                //This also is an Anonymous Function
+                console.log(num / 2);
+            })
+
+            const obj = {
+                nums: [1, 2, 3, 4],
+                triple: function() {
+                    //This is also an Anonymous Function
+                    this.nums.forEach(function(n){
+                        console.log(n * 3);
+                    });
+                }
+            };
+
+            //Prototype Functions
+            function Animal(name) {
+                this.name = name;
+
+            }
+
+            // Use the prototype PROPERTY to add a method to an existing OBJECT
+            Animal.prototype.bite = function() {
+                console.log(`${this.name} bites!`)
+            }
+
+            Animal.prototype.sit = function() {
+                console.log(`${this.name} sits!`)
+            }
+
+            Animal.prototype.breed = "Pitbull";
+
+            let dog = new Animal("Scoob");
+
+        </script>
+
+
+    </body>

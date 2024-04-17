@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>01-03-02</title>
+    </head>
+    <body>
+        <script>
+            function sum(a,b) {return a+b};
+            function sayHi(s) { alert(`Hi,${s}! `)}
+            function doWork(a,b,s){
+                // _sum is a LOCAL variable
+                let _sum = sum(a,b);
+                sayHi(s) ;
+                window.alert (_sum) ;
+            }
+
+            function sayBye(){
+                alert("Bye!");
+            }
+
+            function sayWord(word){
+                alert(word);
+            }
+            //userName is a GLOBAL variable
+            let userName;
+            alert (typeof(userName));
+
+            function showName() {
+                getname();
+                alert(userName);
+            }
+
+            function getName(){
+
+            }
+            function showName2(fName,lName) {
+                document.write ("<strong>Your First Name is : ");
+                document.write(fName + "<br>")
+                document.write ("<strong>Your Last Name is : ");
+                document.write(lName + "</strong>")
+            }
+            let s = sum(1,2); // calling statement
+            window. alert(s); // calling statement
+            sayHi("cornbread"); // calling statement
+            doWork(3,4,"beans")
+
+            showName2("John", "Doe")
+        </script>
+    </body>
+</html>

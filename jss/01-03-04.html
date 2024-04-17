@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>02-03-03</title>
+    </head>
+    <body>
+
+        <script>
+            /* TODO: Refactor as a Quadrilateral */
+            class Rectangle {
+                constructor(height,width){
+                    this.height = height;
+                    this.width = width;
+                }
+                //not a setter so area will be read only
+                get area() {
+                    return this.calcArea();
+                }
+                //Method
+                // a Method is just a function defined inside a class
+                calcArea() {
+                    return this.height * this.width;
+                }
+            }
+
+            // square is an "object" of the "class", Rectangle
+            const square = new Rectangle(10, 10);
+            alert(square.area);
+
+            const Rectangle1 = new Rectangle(40, 10);
+            alert(Rectangle1.area);
+
+            const Rectangle2 = new Rectangle(80, 20);
+            alert(Rectangle2.area);
+        </script>
+    </body>
+</html>

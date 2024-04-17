@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Histology</title>
+    </head>
+    <body>
+        <h1>Animal Tissues</h1>
+        <button id ="btnGetTissueData">Get Tissue Data</button>
+        <ul id="tissuesList"></ul>
+        <script>
+            const endPointUrl = "http://10.115.8.44/uploads/xmltest.xml";
+            const getTissueButton = document.querySelector('#btnGetTissueData');
+
+            
+            getTissueButton.addEventListener('click', ()=> {
+                const xhr = new XMLHttpRequest();
+                // 1) request the histology xml data from the endpoint
+                // 2) read the xml document and generate html elemets
+                xhr.addEventListener("load", ()=> {
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(xhr.responseText, "text/xml");
+
+                    const animalTissueFamilyNode = xmlDoc.querySelectorAll('tissueFamilies')[0];
+
+                    //The value of the <tissueFamily name = "Animal"> node
+                    const animalText = xmlDoc.querySelectorAll('tissueFamilies')[0].children[0].attributes[0].textContent;
+
+                    const plantTissueFamilyNode = xmlDoc.querySelectorAll('tissueFamilies')[1];
+                    //The value of the <tissueFamily name = "Plant"> node
+                    const plantText = xmlDoc.querySelectorAll('tissueFamilies')[0].children[1].attributes[0].textContent;
+
+                    const tissuesList = document.getElementById('tissuesList')
+                    const animalTissueListItem = document.createElement('li');
+                    const animalTissueFamilyHeading = document.createElement('h2');
+                    animalTissueFamilyHeading.textContent = animalText;
+                    animalTissueListItem.appendChild(animalTissueFamilyHeading);
+                    tissuesList.appendChild(animalTissueListItem);
+                    
+                    const plantTissueListItem = document.createElement('li');
+                    const plantTissueFamilyHeading = document.createElement('h2');
+                    plantTissueFamilyHeading.textContent = plantText;
+                    plantTissueListItem.appendChild(plantTissueFamilyHeading);
+                    tissuesList.appendChild(plantTissueListItem);
+
+
+
+                    //Create a list for the <tissueCategory> nodes
+                    const tisssueCategoriesList = document.createElement('ul');
+
+                    //Create the Epithelia Tissue Category
+                    const epitheliaTissueCategoryListItem = document.createElement('li');
+                    tisssueCategoriesList.appendChild(epitheliaTissueCategoryListItem);
+                    //Create the Connective Tissue Cateogory
+
+                    //Create the Muscle Tissue Category
+
+                    //Create the Nervous Tissue Category
+
+                });
+                //open a TCP/IP connection
+                xhr.open("GET", endPointUrl, true);
+                //send a request to the url over the connection
+                xhr.send();
+                
+            });
+
+            /*
+            <h1>Tissues</h1> DONE
+            <ul>
+                <li>
+                    <h2>Animal</h2> DONE
+                    <ul>
+                        <li>
+                            <h3>Epithelial</h3>
+                            <ul>
+                                <li>Simple Squamous</li>
+                                <li>Simple Cuboidal</li>
+                                <li>Simple Columnar</li>
+                                <li>Stratified Squamous</li>
+                                <li>pseudostratified Columnar</li>
+                        </li>
+                        <li>
+                            <h3>Connective</h3>
+                        </li>
+                        <li>
+                            <h3>Muscle</h3>
+                        </li>
+                        <li>
+                            <h3>Nervous</h3>
+                        </li>
+
+                </li>
+                <li>
+                    <h2>Plant</h2> DONE
+                </li>
+            </ul>
+            */
+        </script>
+    </body>

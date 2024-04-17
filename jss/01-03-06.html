@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>02-03-03</title>
+    </head>
+    <body>
+        
+        <h1>JavaScript Functions</h1>
+        <p>
+            In JavaScript, functions are objects!<br>
+            This means that functions have properties, methods, and events
+            The arguments property is an <strong>array-like </strong> object!
+        </p>
+        <script>
+            // TODO: write a function that can 
+            // concatenate n-number of strings
+            // using a provided "token" separator
+            // myfunction("one", "two", "three", "-");
+            // output: one-two-three
+            // myfunction("casey", "diya", "*");
+            // output: casey*diya
+
+
+            function string(token){
+                let newString = "";
+                for (let i = 1; i < arguments.length; i++ ){
+                    newString += arguments[i] + token;
+                
+                }
+                return newString;
+            }
+
+            // Function Expression 
+            const square = function (num) {
+                return num * num;
+            }
+
+            console.log(square(5))
+
+            if(typeof(square) === "function"){
+                console.log("The square function exists")
+
+            }else{
+                console.log("The function does not exist!")
+            }
+            
+        </script>
+    </body>
+</html>

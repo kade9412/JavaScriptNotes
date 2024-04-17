@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+        <head>
+            <meta charset="utf-8">
+            <title>02-03-03</title>
+        </head>
+        <body>
+            <form>
+                <input type="button" value="Take Quiz"
+                onclick="takeQuiz()">
+            </form>
+                <script>
+
+                        
+                        let question_01 = "What is defined as a named block of code that can be called when needed?";
+                        let answer_01 = "function";
+    
+                        let question_02 = "What is defined as a value or expression containing data or code passed on to a function or procedure?";
+                        let answer_02 =  "argument";
+
+
+                    function takeQuiz(){
+                        let grade = 0;
+                        let right = 0;
+                        let total = 2;
+                        let response_01 = ""
+                        let response_02 = ""
+                        /*
+                            TODO: 1) check answers
+                                  2) calculate grade
+                        */
+                        response_01 = prompt(question_01);
+    
+                        response_02 = prompt(question_02);
+
+                        if(response_01 === answer_01){
+                            right++;
+                        }
+                        if(response_02 === answer_02){
+                            right++;
+                        }
+                        grade = (right / total)*100
+                        alert("Your grade is "+grade);
+                        
+                        
+                        
+                    }
+
+                </script>
+        </body>
+</html>

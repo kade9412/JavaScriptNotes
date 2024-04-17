@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tissueFamilies>
+    <tissueFamily name="Animal">
+        <tissueCategories>
+            <tissueCategory name = "Epithelial">
+                <tissueType name="Simple Squamous"></tissueType>
+                <tissueType name="Simple Cuboidal"></tissueType>
+                <tissueType name="Simple Columnar"></tissueType>
+                <tissueType name="Stratified Squamous"></tissueType>
+                <tissueType name="pseudostratified Columnar"></tissueType>
+            </tissueCategory>
+            <tissueCategory name = "Connective" >
+                <tissueType name="Loose Connective"></tissueType>
+                <tissueType name="Dense Connective"></tissueType>
+                <tissueType name="Cartilagenous"></tissueType>
+                <tissueType name="Compact Bone"></tissueType>
+                <tissueType name="Adipose"></tissueType>
+                <tissueType name="Blood"></tissueType>
+            </tissueCategory>
+            <tissueCategory name = "Muscle" >
+                <tissueType name="Smooth"></tissueType>
+                <tissueType name="cardiac"></tissueType>
+                <tissueType name="Skeletal"></tissueType>
+            </tissueCategory>
+            <tissueCategory name = "Nervous" ></tissueCategory>
+        </tissueCategories>
+    </tissueFamily>
+
+    <tissueFamily name="Plant">
+        <tissueCategories/>
+    </tissueFamily>
+</tissueFamilies>
+
+<!-- ORM
+    Map our DATA to our OBJECTS 
+    create a class mapped to data
+    tissues families -> array
+    tissue family -> class
+-->
+<!-- 
+    JS
+    1.) We need to estaablish a TCP/IP connection between our script and an endpoint (request)
+    2.) We need to download the payload (response)
+    3.) Process the payload
+
+    -Parse from XML into HTML
+-->

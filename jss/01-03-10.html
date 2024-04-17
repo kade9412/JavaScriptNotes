@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>01-03-10</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+            body{
+                background-color: #272932;
+                background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                height: 90vh;
+            }
+            #input{
+                height: 80px;
+                background-color:aqua;
+                color:purple;
+                
+                border:outset 20px red;
+                font-size: 35px;
+                border-radius: 90px;
+            }
+            #input:focus-visible{
+                outline:none;
+            }
+            input::placeholder{
+                color:purple;
+                opacity: 1;
+            }
+            #out{
+                color:white;
+                font-size: 80px;
+                font-family:"Kode Mono", monospace;
+                
+            }
+            #input:focus{
+                
+                animation-name: pulse;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+            }
+            @keyframes pulse {
+                0% { height: 80px; }
+               50% {height: 100px; }
+              100% { height:80px; }
+            }
+            
+        </style>
+    </head>
+    <body>
+        <input type="text" id="input" placeholder="  Input number here!" >
+        <p id="out"></p>
+        <script>
+            const spin = [
+                {transform: "rotate(0deg)"},
+                {transform: "rotate(360deg)"}
+            ];
+            const spinTiming = {
+                duration: 550,
+                iterations: 1
+            };
+            const input = document.getElementById("input");
+            const output = document.getElementById("out");
+            let splicedArray = [];
+            let One = false;
+            let Out = "";
+            
+            document.addEventListener('change', ()=>{// when they hit enter
+                
+                One = false;
+                Out = "";
+                splicedArray = input.value.split('');
+                pronounce();
+                output.textContent = Out;
+                output.animate(spin,spinTiming)
+                input.value = "";
+                
+                
+            })
+            
+            
+            function pronounce(){
+                if(splicedArray[0] === '-'){
+                    Out += "negative "
+                    splicedArray.shift();
+                }
+                if(splicedArray.length >= 5){
+                    switch (splicedArray[splicedArray.length-5]){//ten thousandths
+                        case '0':
+                            Out +=("");
+                            break;
+                        case '1':
+                            One = true;
+                            if((splicedArray[0] === '1') && (splicedArray[1] === '0')){
+                                Out +=('ten thousand')
+                            }
+                            break;
+                        case '2':
+                            Out +=("twenty ")
+                            break;
+                        case '3':
+                            Out +=("thirty ")
+                            break;
+                        case '4':
+                            Out +=("fourty ")
+                            break;
+                        case '5':
+                            Out +=("fifty ")
+                            break;
+                        case '6':
+                            Out +=("sixty ")
+                            break;
+                        case '7':
+                            Out +=("seventy ")
+                            break;
+                        case '8':
+                            Out +=("eightty ")
+                            break;
+                        case '9':
+                            Out +=("ninety ")
+                            break;
+                        default:
+                            Out +=("")
+                            break;
+                    }
+                    }
+                
+                if(splicedArray.length >= 4){
+                    switch (splicedArray[splicedArray.length-4]){//thousands place
+                            case '1':
+                                Out +=("one thousand ")
+                                break;
+                            case '2':
+                                Out +=("two thousand ")
+                                break;
+                            case '3':
+                                Out +=("three thousand ")
+                                break;
+                            case '4':
+                                Out +=("four thousand ")
+                                break;
+                            case '5':
+                                Out +=("five thousand ")
+                                break;
+                            case '6':
+                                Out +=("six thousand ")
+                                break;
+                            case '7':
+                                Out +=("seven thousand ")
+                                break;
+                            case '8':
+                                Out +=("eight thousand ")
+                                break;
+                            case '9':
+                                Out +=("nine thousand ")
+                                break;
+                            default:
+                                Out +=("")
+                                break;
+    
+                        }
+                }
+                if(splicedArray.length >= 3){
+                    switch (splicedArray[splicedArray.length-3]){//hundreds place
+                            case '1':
+                                Out +=("one hundred ")
+                                break;
+                            case '2':
+                                Out +=("two hundred ")
+                                break;
+                            case '3':
+                                Out +=("three hundred ")
+                                break;
+                            case '4':
+                                Out +=("four hundred ")
+                                break;
+                            case '5':
+                                Out +=("five hundred ")
+                                break;
+                            case '6':
+                                Out +=("six hundred ")
+                                break;
+                            case '7':
+                                Out +=("seven hundred ")
+                                break;
+                            case '8':
+                                Out +=("eight hundred ")
+                                break;
+                            case '9':
+                                Out +=("nine hundred ")
+                                break;
+                            default:
+                                Out +=("")
+                                break;
+    
+                        }
+                }
+                if(splicedArray.length >= 2){        
+                    switch (splicedArray[splicedArray.length-2]){//tens place
+                        case '0':
+                            Out +=("");
+                            break;
+                        case '1':
+                            One = true;
+                            if((splicedArray[0] === '1') && (splicedArray[1] === '0')){
+                                Out +=('ten')
+                            }
+                            break;
+                        case '2':
+                            Out +=("twenty ")
+                            break;
+                        case '3':
+                            Out +=("thirty ")
+                            break;
+                        case '4':
+                            Out +=("fourty ")
+                            break;
+                        case '5':
+                            Out +=("fifty ")
+                            break;
+                        case '6':
+                            Out +=("sixty ")
+                            break;
+                        case '7':
+                            Out +=("seventy ")
+                            break;
+                        case '8':
+                            Out +=("eightty ")
+                            break;
+                        case '9':
+                            Out +=("ninety ")
+                            break;
+                        default:
+                            Out +=("")
+                            break;
+                    }
+                }
+                if(splicedArray.length >=1){
+                    switch (splicedArray[splicedArray.length-1]){//Ones place
+                        case '0':
+                            
+                            if((splicedArray.length === 1) && (splicedArray[0] === '0')){ 
+                                Out +=("zero");
+                            }
+                            else{
+                                Out +=("");
+                            }
+                            break;
+                        case '1':
+                            if(One === true){
+                                Out +=("eleven")
+                            }else{
+                                Out +=("one")
+                            }
+                            break;
+                        case '2':
+                            if(One === true){
+                                Out +=("twelve")
+                            }else{
+                                Out +=("two")
+                            }
+                            break;
+                        case '3':
+                            if(One === true){
+                                Out +=("thirteen")
+                            }else{
+                                Out +=("three")
+                            }
+                            break;
+                        case '4':
+                            if(One === true){
+                                Out +=("fourteen")
+                            }else{
+                                Out +=("four")
+                            }
+                            break;
+                        case '5':
+                            if(One === true){
+                                Out +=("fifteen")
+                            }else{
+                                Out +=("five")
+                            }
+                            break;
+                        case '6':
+                            if(One === true){
+                                Out +=("sixteen")
+                            }else{
+                                Out +=("six")
+                            }
+                            break;
+                        case '7':
+                            if(One === true){
+                                Out +=("seventeen")
+                            }else{
+                                Out +=("seven")
+                            }
+                            break;
+                        case '8':
+                            if(One === true){
+                                Out +=("eighteen")
+                            }else{
+                                Out +=("eight")
+                            }
+                            break;
+                        case '9':
+                            if(One === true){
+                                Out +=("nineteen")
+                            }else{
+                                Out +=("nine")
+                            }
+                            break;
+                        default:
+                            Out +=("")
+                            break;
+                    }
+                }
+                        
+            }
+
+        </Script>
+    </body>
+
+</html>

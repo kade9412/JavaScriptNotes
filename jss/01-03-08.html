@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>01-03-08</title>
+    </head>
+
+    <!-- How is "this" determined inside of event handlers?-->
+    <body onclick="alert(this);"><!-- returns object HTMLBodyElement -->
+
+        <h1 onclick="alert(this);">What is this?</h1> <!-- returns object HTMLHeadingElement -->
+
+        <script>
+            const h1 = document.querySelector('h1');
+
+            h1.addEventListener('click', ()=>{
+                window.alert(this);
+            })
+        </script>
+
+
+    </body>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>01-03-07</title>
+    </head>
+    <body>
+        <h1> The this Keyword</h1>
+        <p>
+            That this is the <strong>object</strong> that's executing a function
+            <ul>
+                <li>Inside a class, the object executing the method is the object it belongs to.</li>
+                <li>Outside a classs, the object executing a function is the window object.</li>
+            </ul>
+        </p>
+        <script>
+            /*
+            console.log(this);
+
+
+            const obj = {
+                dowork() {console.log(this);}
+
+            }
+
+            obj.dowork();
+            function prints(){
+                console.log(this);
+            }
+            prints();*/
+            
+             /*
+            const cat = {
+                name: 'kitty purry',
+                talk(){console.log(this)}
+            }
+            cat.talk();
+
+            cat.walk = function(){
+                console.log(this);
+            }
+
+
+            function kitty(name){
+                this.name = name;
+                console.log(this);
+            }
+
+            kitty("stanely")
+
+            function Kitty(name){
+                this.name = name;
+                console.log(this);
+            }
+
+            const kitty_cat = new Kitty("bane") //creates a object with new
+            */
+           /*
+            window.x = 100; //this.x = 100;
+            window.y = 1000; // this.y = 1000;
+           function printCoordinates(){
+                console.log(this.x, this.y)
+           }
+           printCoordinates();
+
+           const computer= {
+            brand: "Dell",
+            parts: ["GPU", "CPU", "RAM"],
+            listParts(){
+                    this.parts.forEach(function(part){
+                    console.log(this.brand, part);
+                    }, this) //explictly choses what this is
+                    
+                    this.parts.forEach((part)=>{
+                    console.log(this.brand, part);
+                    }) //explictly choses what this is 
+
+                }
+            }
+            */
+
+            /*
+            function greet(first, last) {
+                console.log(`Hello, ${first} ${last}`)
+                console.log(this)
+            }
+
+            //Function.prototype.call
+            /*
+                The call() mehtod allows you to call a function and pass in a value 
+                for the this keyword.
+
+                This allows you to add extra functionality to an object without actually adding a new method to the object.
+            */
+            /*
+            // Let's call greet as we normally would but 
+            // control the value of it's this keyword.
+            greet.call(
+                {age: 15, grade: 10},
+                "Chris", 
+                "Bacon"
+            )
+            */
+
+            function sum(a,b){
+                console.log(this);
+                return a + b;
+            }
+            
+            sum.call({},10,20);
+
+            sum.apply({},[20,20]);
+
+            function greet(first, middle, last){
+                //TODO
+            }
+       </script>
+    </body>
+</html>
