@@ -1,76 +1,89 @@
-<!DOCTYPE html>
-<html lang="en-US">
+<!doctype html>
+<html lang="en-us">
     <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Histology</title>
+        <meta charset="utf-8">
+        <title>Histology</title>
     </head>
     <body>
-        <h1>Animal Tissues</h1>
-        <button id ="btnGetTissueData">Get Tissue Data</button>
-        <ul id="tissuesList"></ul>
+        <h1>Tissues</h1>
+        <button id="btnGetTissueData">Get Tissue Data</button>
+        <ul id="tissuesList"> </ul>
         <script>
-            const endPointUrl = "http://10.115.8.44/uploads/xmltest.xml";
+            const endpointUrl = "http://10.115.8.44/uploads/xmltest.xml";
+
             const getTissueButton = document.querySelector('#btnGetTissueData');
 
-            
             getTissueButton.addEventListener('click', ()=> {
                 const xhr = new XMLHttpRequest();
-                // 1) request the histology xml data from the endpoint
-                // 2) read the xml document and generate html elemets
-                xhr.addEventListener("load", ()=> {
+               
+                xhr.addEventListener('load', ()=> {
                     const parser = new DOMParser();
                     const xmlDoc = parser.parseFromString(xhr.responseText, "text/xml");
 
-                    const animalTissueFamilyNode = xmlDoc.querySelectorAll('tissueFamilies')[0];
+                    const animalTissueFamilyNode = xmlDoc.querySelectorAll('tissueFamily')[0];
 
-                    //The value of the <tissueFamily name = "Animal"> node
-                    const animalText = xmlDoc.querySelectorAll('tissueFamilies')[0].children[0].attributes[0].textContent;
+                    // The value of the <tissueFamily name="Animal"> node
+                    const animalText = animalTissueFamilyNode.attributes[0].textContent;
 
-                    const plantTissueFamilyNode = xmlDoc.querySelectorAll('tissueFamilies')[1];
-                    //The value of the <tissueFamily name = "Plant"> node
-                    const plantText = xmlDoc.querySelectorAll('tissueFamilies')[0].children[1].attributes[0].textContent;
-
-                    const tissuesList = document.getElementById('tissuesList')
+                   
+                    const plantTissueFamilyNode = xmlDoc.querySelectorAll('tissueFamily')[1];
+                    // The value of the <tissueFamily name="Plant"> node
+                    const plantText = plantTissueFamilyNode.attributes[0].textContent;
+                   
+                    const tissuesList = document.getElementById('tissuesList');
+                   
+                    // Creating the Animal Tissue HTML Elements
                     const animalTissueListItem = document.createElement('li');
                     const animalTissueFamilyHeading = document.createElement('h2');
                     animalTissueFamilyHeading.textContent = animalText;
                     animalTissueListItem.appendChild(animalTissueFamilyHeading);
                     tissuesList.appendChild(animalTissueListItem);
-                    
+
+                    // Creating the Plant Tissue HTML ELements
                     const plantTissueListItem = document.createElement('li');
                     const plantTissueFamilyHeading = document.createElement('h2');
                     plantTissueFamilyHeading.textContent = plantText;
                     plantTissueListItem.appendChild(plantTissueFamilyHeading);
                     tissuesList.appendChild(plantTissueListItem);
 
+                    // Create a list for the <tissueCategory> Nodes
+                    const tissueCategoriesList = document.createElement('ul');
+               
 
-
-                    //Create a list for the <tissueCategory> nodes
-                    const tisssueCategoriesList = document.createElement('ul');
-
-                    //Create the Epithelia Tissue Category
+                    // Create the Epithelia Tissue Category
                     const epitheliaTissueCategoryListItem = document.createElement('li');
-                    tisssueCategoriesList.appendChild(epitheliaTissueCategoryListItem);
-                    //Create the Connective Tissue Cateogory
+                    const epithelialTissueCategoryNode = animalTissueFamilyNode.children[0].children[0];
+                    debugger;
 
-                    //Create the Muscle Tissue Category
+                    tissueCategoriesList.appendChild(epitheliaTissueCategoryListItem);
+                    // Create the Connective Tissue Cateogory
 
-                    //Create the Nervous Tissue Category
+                    // Create the Muscle Tissue Category
+
+                    // Create the Nervous Tissue Category
+
+
+
 
                 });
-                //open a TCP/IP connection
-                xhr.open("GET", endPointUrl, true);
-                //send a request to the url over the connection
+
+                // open a TCP/IP connection
+                xhr.open("GET", endpointUrl, true); // have we used AJAX?
+
+                // send a request to the url over the connection
                 xhr.send();
-                
+
+                // 1) request the histology xml data from the endpoint
+                // 2) read the xml document and generate html elements
+
+               
             });
 
-            /*
-            <h1>Tissues</h1> DONE
-            <ul>
-                <li>
-                    <h2>Animal</h2> DONE
+           /*
+            <h1>Tissues</h1> done
+            <ul> done
+                <li> done
+                    <h2>Animal</h2> done
                     <ul>
                         <li>
                             <h3>Epithelial</h3>
@@ -79,7 +92,8 @@
                                 <li>Simple Cuboidal</li>
                                 <li>Simple Columnar</li>
                                 <li>Stratified Squamous</li>
-                                <li>pseudostratified Columnar</li>
+                                <li>Pseudostratified Columnar</li>
+                            </ul>
                         </li>
                         <li>
                             <h3>Connective</h3>
@@ -90,12 +104,14 @@
                         <li>
                             <h3>Nervous</h3>
                         </li>
-
+                    </ul>
                 </li>
-                <li>
-                    <h2>Plant</h2> DONE
+                <li> done
+                    <h2>Plant</h2> done
                 </li>
             </ul>
-            */
+           */
+
         </script>
     </body>
+</html>
