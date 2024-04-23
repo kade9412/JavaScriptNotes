@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <tissueFamilies>
-    <tissueFamily name="Animal">
+    <tissueFamily name="Animal"><!-- animalTissueFamilyNode -->
         <tissueCategories>
-            <tissueCategory name = "Epithelial">
+            <tissueCategory name = "Epithelial"><!--epitheliealTissueCategoryNode-->
                 <tissueType name="Simple Squamous"></tissueType>
                 <tissueType name="Simple Cuboidal"></tissueType>
                 <tissueType name="Simple Columnar"></tissueType>
                 <tissueType name="Stratified Squamous"></tissueType>
                 <tissueType name="pseudostratified Columnar"></tissueType>
             </tissueCategory>
-            <tissueCategory name = "Connective" >
+            <tissueCategory name = "Connective" ><!--connectiveTissueCategoryNode-->
                 <tissueType name="Loose Connective"></tissueType>
                 <tissueType name="Dense Connective"></tissueType>
                 <tissueType name="Cartilagenous"></tissueType>
@@ -18,12 +18,12 @@
                 <tissueType name="Adipose"></tissueType>
                 <tissueType name="Blood"></tissueType>
             </tissueCategory>
-            <tissueCategory name = "Muscle" >
+            <tissueCategory name = "Muscle" ><!--muscleTissueCategoryNode-->
                 <tissueType name="Smooth"></tissueType>
                 <tissueType name="cardiac"></tissueType>
                 <tissueType name="Skeletal"></tissueType>
             </tissueCategory>
-            <tissueCategory name = "Nervous" ></tissueCategory>
+            <tissueCategory name = "Nervous" ></tissueCategory><!--nervousTissueCategoryNode-->
         </tissueCategories>
     </tissueFamily>
 

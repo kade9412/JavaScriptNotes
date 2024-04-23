@@ -9,8 +9,9 @@
         <button id="btnGetTissueData">Get Tissue Data</button>
         <ul id="tissuesList"> </ul>
         <script>
-            const endpointUrl = "http://10.115.8.44/uploads/xmltest.xml";
-
+            const rolansEndpoint = "http://10.115.8.44/uploads/xmltest.xml";
+            const serverEndpoint = 'http://10.115.8.56/sites/histology/data.xml';
+            
             const getTissueButton = document.querySelector('#btnGetTissueData');
 
             getTissueButton.addEventListener('click', ()=> {
@@ -68,7 +69,7 @@
                 });
 
                 // open a TCP/IP connection
-                xhr.open("GET", endpointUrl, true); // have we used AJAX?
+                xhr.open("GET", serverEndpoint, true); // have we used AJAX?
 
                 // send a request to the url over the connection
                 xhr.send();
