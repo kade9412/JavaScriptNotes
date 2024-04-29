@@ -1,32 +1,212 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-us">
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>01-04-07</title>
+        <style>
+            body, input, button{
+                font-size: 2rem;
+            }
+            table, th, td{
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+        </style>
     </head>
     <body>
         <h1>01-04-07</h1>
+        <!--
+            READ: http://10.115.8.56/sites/mysqlconnection.php
+            CREATE: http://10.115.8.56/sites/mysqlCreateEndpoint.php
+        -->
+        <!-- Document.forms lets us get all the forms on the page-->
+        <!-- document.forms[0].elements[0].value -->
+        <!-- document.myForm.txtName.value -->
+        <form id="form1" method="GET" action="" name="form1" target="Text1">
+            <label for ="text1">Text 1</label>
+            <br>
+            <input type="text" name="text1" id="text1">
+            <br>
+            <label for ="text2">Text 2</label>
+            <br>
+            <input type="text" name="text2" id="text2">
+            <br>
+            <input type="reset">
+            <input type="submit"></input>
 
+        </form>
+        <hr>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Form Properties</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>action</td>
+                    <td id="formAction"></td>
+                </tr>
+                <tr>
+                    <td>autocomplete</td>
+                    <td id="formAutocomplete"></td>
+                </tr>
+                <tr>
+                    <td>elements</td>
+                    <td id="formElements"></td>
+                </tr>
+                <tr>
+                    <td>encoding</td>
+                    <td id="formEncoding"></td>
+                </tr>
+                <tr>
+                    <td>length</td>
+                    <td id="formLength"></td>
+                </tr>
+                <tr>
+                    <td>method</td>
+                    <td id="formMethod"></td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td id="formName"></td>
+                </tr>
+                <tr>
+                    <td>noValidate</td>
+                    <td id="formNoValidate"></td>
+                </tr>
+                <tr>
+                    <td>target</td>
+                    <td id="formTarget"></td>
+                </tr>
+                
+            </tbody>
+        </table>
         <script>
+            /*
+            onchange
+            onfocus
+            onreset
+            onsubmit
+            */
+           const theForm          = document.forms[0];
+           const formAction       = document.getElementById('formAction')
+           const formAutocomplete = document.getElementById('formAutocomplete')
+           const formElements     = document.getElementById('formElements')
+           const formEncoding     = document.getElementById('formEncoding')
+           const formLength       = document.getElementById('formLength')
+           const formMethod       = document.getElementById('formMethod')
+           const formName         = document.getElementById('formName')
+           const formNoValidate   = document.getElementById('formNoValidate')
+           const formTarget       = document.getElementById('formTarget')
 
+
+            for ( let index =0; index < theForm.elements.length; index++){
+                const newDiv = document.createElement('div');
+                newDiv.textContent = theForm.elements[index].name;
+                formElements.append(newDiv);
+                
+            }
+           formAction.textContent       = theForm.action;
+           formAutocomplete.textContent = theForm.autocomplete;
+           
+           formEncoding.textContent     = theForm.encoding;
+           formLength.textContent       = theForm.length;
+           formMethod.textContent       = theForm.method;
+           formName.textContent         = theForm.name;
+           formNoValidate.textContent   = theForm.noValidate;
+           formTarget.textContent       = theForm.target;
+
+
+
+           theForm.addEventListener('change', (e)=>{
+                // e is an Event object
+                console.log("the form has changed!");
+           })
+           //TODO: Research why this Form event does not fire
+           theForm.addEventListener('focus', (fe)=>{
+                //fe is a FocusEvent object
+                console.log("the form is focused")
+           })
+
+           theForm.addEventListener('reset', (e)=>{
+                // e is an Event object
+                console.log("the form is reset")
+                if(confirm("are you sure") === false){
+                    e.preventDefault();
+                }
+           })
+
+           theForm.addEventListener('submit', (se)=>{
+                //se is a SubmitEvent object
+                console.log(se);
+           })
         </script>
     </body>
 </html>
+<!--
+    Validation is the enforcement of buisness rules
+    SSN
+    Must be 9 dig long
+    DBA -> one long int
+    1234535243 int
+    123-12-1245 (varchar/nvarchar/char/nchar)
+
+    mba must view ssn with dashes
+
+    Credit card numbers
+    must provide CC (16 dig)
+    must provide EXP date (date)
+    CVV number (3-dig)
+    cardholder (OBJECT -> billing address -> shipping address) 
+    CC company
 
 
+    Form control
 
-<!-- 
-    Validation is the enforcement of business rules.
+        Elements
+        button  
+        checkbox 
+        fieldset
+        legend
+        hidden
+        color
+        email
+        file
+        keygen
+        label
+        password 
+        radio
+        reset
+        range
+        select
+        submit
+        text
+        textarea
+        url
 
-    Social Security Numbers
-        - Must be exactly 9 digits long
-        - DBA -> the data is stored as one long integer
-        - MBA -> we must view the SSN with dashes (output)
+    Form properties
+        action
+        autocomplete
+        elements
+        encoding
+        length
+        method
+        name
+        noValidate
+        target
 
-    Credit Card Numbers
-        - Must provide CC Number (16 digits)
-        - Must provide EXP Date (date)
-        - Must provide CVV Number (3-digits)
-        -Cardhoder (object -> billing address -> shipping address)
-        - CC Company 
+    Form methods
+        submit();
+        reset();
+
+    Form events
+        [+] onchange
+        [+] onfocus
+        [+] onreset 
+        [+] onsubmit
+
+     
 -->
+	
