@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>01-04-08</title>
+    </head>
+    <body>
+        <h1>Web APIs</h1>
+        <ul>
+            <h2>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API " target="_blank">Web Storage API</a>
+            </h2>
+                <ul><li>
+                    <a href = "https://developer.mozilla.org/en-US/docs/Web/API/Storage" target="_blank">Storage</a>
+                </li>
+                    <li>localStorage</li>
+                    <li>setItem()</li>
+                    <li>gettItem()</li>
+                    <li>removeItem()</li>
+                    <li>
+                        <button id="btnRemoveitem">Remove Item</button>
+                    </li>
+                    <li>clear()</li>
+                    <li>
+                        <button id = "btnClearStorage">Clear Storage</button>
+                    </li>
+                    <li>
+                        <button id="changeLocalStorage">Change Local Storage</button>
+                    </li>
+                    <li>sessionStorage</li>
+                    <li>
+                        <button id="changeSessionStorage">Change Local Storage</button>
+                    </li>
+                </ul>
+            <li>
+                <a href = "https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API" target="_blank">Geolocation API</a>
+                <br>
+                <a href = "https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API#examples" target="_blank">Example</a>
+            </li>
+            <li>Canvas API</li>
+        </ul>
+        <script>
+            if(!localStorage.getItem("to_be_removed",)){
+                localStorage.setItem("to_be_removed", "this is to be removed by the removeItem() method")
+            }
+            if (!localStorage.getItem("name")){
+                localStorage.setItem("name", "true");
+                sessionStorage.setItem("temp", "this is for the session");
+            }
+            
+
+            const btnChangeLocalStorage = document.getElementById('changeLocalStorage')
+            btnChangeLocalStorage.addEventListener('click', ()=>{
+                localStorage.setItem("name", "false");
+            })
+
+            const btnChangeSessionStorage = document.getElementById('changeSessionStorage')
+            btnChangeSessionStorage.addEventListener('click', ()=>{
+                sessionStorage.setItem("temp", "in a session")
+            })
+
+            const btnRemoveitem = document.getElementById('btnRemoveitem')
+            btnRemoveitem.addEventListener('click', ()=>{
+                localStorage.removeItem("to_be_removed")
+            })
+
+            const btnClearStorage = document.getElementById('btnClearStorage');
+            btnClearStorage.addEventListener('click', ()=>{
+                localStorage.clear();
+            })
+        </script>
+    </body>
+</html>
